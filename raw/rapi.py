@@ -3,6 +3,7 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 from _ctypes_rapi import *
+from ctypes.wintypes import *
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~ Code generated from:
@@ -181,20 +182,21 @@ LPLPCEDB_FIND_DATA = POINTER(POINTER(CEDB_FIND_DATA))
 
 #~ line: 222, skipped: 8 ~~~~~~
 
-class _CEOIDINFO(Structure):
-    _fields_ = [
-        ("wObjType", WORD),
-        ("wPad", WORD),
-        ("", ),
-        ]
-
-class (Union):
+class _CEOIDINFO_Union(Union):
     _fields_ = [
         ("infFile", CEFILEINFO),
         ("infDirectory", CEDIRINFO),
         ("infDatabase", CEDBASEINFO),
         ("infRecord", CERECORDINFO),
         ]
+
+class _CEOIDINFO(Structure):
+    _fields_ = [
+        ("wObjType", WORD),
+        ("wPad", WORD),
+        ("_u", _CEOIDINFO_Union),
+        ]
+    _anonymous_ = ('_u',)
 
 #~ line: 231, skipped: 6 ~~~~~~
 
