@@ -41,6 +41,7 @@ class FilterVisitor(AtomFilterVisitor):
         if item.ident in self.filterConditionals:
             return
 
+        print 'define', item
         if item.ident.startswith('Ce'):
             # Grab all defines
             #self.select(item)
@@ -58,6 +59,7 @@ class FilterVisitor(AtomFilterVisitor):
         if item.body in self.filterConditionals:
             return
 
+        print 'conditional', item
         #self.select(item)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

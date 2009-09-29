@@ -1,5 +1,9 @@
 syntax: glob
 
+syntax: regexp
+generate/inc/.*
+generate/build/.*
+
 syntax: glob
 \.DS_Store
 \.svn/
@@ -11,15 +15,7 @@ syntax: glob
 .*.swo
 
 *.m4b
-*.mov
-*.wav
 *.dll
-
-syntax: regexp
-^gen/.*/build/.*
-^sandbox/misc/.*
-^proj/cepstral/test/demos/.*
-
 
 syntax: regexp
 Icon\r
