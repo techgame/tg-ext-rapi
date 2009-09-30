@@ -4,7 +4,9 @@
 
 syntax: glob 
 
-syntax: regexp 
+syntax: regexp
+generate/inc/.*
+generate/build/.*
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~ Generally useful ignore configurations
@@ -12,6 +14,7 @@ syntax: regexp
 
 # auto-generated content
 syntax: glob 
+*~
 *.pyc
 *.pyo
 
@@ -36,6 +39,7 @@ CVS/
 # Various Windows generated files
 syntax: glob 
 Thumbs.db
+*.dll
 
 # Various MacOSX generated files
 syntax: glob 
